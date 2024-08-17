@@ -11,7 +11,7 @@ const app = new Hono().basePath("/api");
 app.get(
   "/hello",
    clerkMiddleware(),
-  helloController(),
+  
   );
 
 export const GET = handle(app);
