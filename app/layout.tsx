@@ -20,7 +20,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>{children}</body>
-      <h1>omar passed from here so check your code </h1>
+      <h1> </h1>
     </html>
     </ClerkProvider>
   );
