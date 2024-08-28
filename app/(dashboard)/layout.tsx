@@ -2,8 +2,12 @@ type Props = {
   children: React.ReactNode;
 };
 
-const DashboardLayout = ({}: Props) => {
-  return <div>Layout</div>;
+const DashboardLayout = ({children}: Props) => {
+  return (
+  <div>
+    {children}
+    </div>
+    );
 };
 
 export default DashboardLayout;
