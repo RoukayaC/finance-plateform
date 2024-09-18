@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { SingleValue } from "react-select";
 import CreateTableSelect from "react-select/creatable";
 
-type Props = {
+type Props = { 
   onChange: (value?: string) => void;
   onCreate?: (value: string) => void;
   options?: { label: string; value: string }[];

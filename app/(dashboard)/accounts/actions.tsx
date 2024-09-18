@@ -2,10 +2,10 @@
 
 import { Edit, MoreHorizontalIcon, Trash } from "lucide-react";
 
- import { useOpenAccount } from "@/features/accounts/hooks/use-open-account";
- import { useDeleteAccount } from "@/features/accounts/api/use-delete-account";
+import { useOpenAccount } from "@/features/accounts/hooks/use-open-account";
+import { useDeleteAccount } from "@/features/accounts/api/use-delete-account";
 
- import { useConfirm } from "@/hooks/use-confirm";
+import { useConfirm } from "@/hooks/use-confirm";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -19,12 +19,12 @@ type Props = {
 };
 
 export const Actions = ({ id }: Props) => {
-   const [ConfirmDialog, confirm] = useConfirm(
-     "Are you sure?",
-     "You are about to delete this account."
-   );
+  const [ConfirmDialog, confirm] = useConfirm(
+    "Are you sure?",
+    "You are about to delete this account."
+  );
 
-   const deleteMutation = useDeleteAccount(id);
+  const deleteMutation = useDeleteAccount(id);
   const { onOpen } = useOpenAccount();
 
   const handleDelete = async () => {
@@ -43,7 +43,7 @@ export const Actions = ({ id }: Props) => {
             <MoreHorizontalIcon className="size-4" />
           </Button>
         </DropdownMenuTrigger>
-         <DropdownMenuContent align="end">
+        <DropdownMenuContent align="end">
           <DropdownMenuItem
             disabled={deleteMutation.isPending}
             onClick={() => {
@@ -60,7 +60,7 @@ export const Actions = ({ id }: Props) => {
             <Trash className="size-4 mr-2" />
             Delete
           </DropdownMenuItem>
-        </DropdownMenuContent> 
+        </DropdownMenuContent>
       </DropdownMenu>
     </>
   );
