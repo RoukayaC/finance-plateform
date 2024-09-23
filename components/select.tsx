@@ -2,9 +2,9 @@
 
 import { useMemo } from "react";
 import { SingleValue } from "react-select";
-import CreateTableSelect from "react-select/creatable";
+import CreateableSelect from "react-select/creatable";
 
-type Props = { 
+type Props = {
   onChange: (value?: string) => void;
   onCreate?: (value: string) => void;
   options?: { label: string; value: string }[];
@@ -30,7 +30,7 @@ export const Select = ({
   }, [options, value]);
 
   return (
-    <CreateTableSelect
+    <CreateableSelect
       placeholder={placeholder}
       className="text-sm h-10"
       styles={{
