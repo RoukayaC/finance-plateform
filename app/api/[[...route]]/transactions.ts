@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { Hono } from "hono";
-//import { parse, subDays } from "date-fns";
+import { parse, subDays } from "date-fns";
 import { createId } from "@paralleldrive/cuid2";
 import { zValidator } from "@hono/zod-validator";
 import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
@@ -35,13 +35,13 @@ const app = new Hono()
       }
 
       const defaultTo = new Date();
-      // const defaultFrom = subDays(defaultTo, 30);
+       const defaultFrom = subDays(defaultTo, 30);
 
-      // const startDate = from
-      //   ? parse(from, "yyyy-MM-dd", new Date())
-      //   : defaultFrom;
+       const startDate = from
+         ? parse(from, "yyyy-MM-dd", new Date())
+         : defaultFrom;
 
-      // const endDate = to ? parse(to, "yyyy-MM-dd", new Date()) : defaultTo;
+       const endDate = to ? parse(to, "yyyy-MM-dd", new Date()) : defaultTo;
 
       const data = await db
         .select({
@@ -62,8 +62,8 @@ const app = new Hono()
           and(
             accountId ? eq(transactions.accountId, accountId) : undefined,
             eq(accounts.userId, auth.userId),
-            // gte(transactions.date, startDate),
-            // lte(transactions.date, endDate)
+             gte(transactions.date, startDate),
+             lte(transactions.date, endDate)
           )
         )
         .orderBy(desc(transactions.date));

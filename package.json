@@ -30,6 +30,7 @@
     "@xata.io/client": "^0.30.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "drizzle-orm": "^0.30.10",
     "drizzle-zod": "^0.5.1",
     "hono": "^4.5.5",
