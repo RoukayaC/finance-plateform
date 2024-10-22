@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { DatePicker } from "@/components/ui/date-picker";
 import { insertTransactionSchema } from "@/db/schema";
 import { convertAmountToMiliunits } from "@/lib/utils";
-import { AmountInput } from "@/components/ui/amount-input";
+import { AmountInput } from "@/components/amount-input";
 import {
   Form,
   FormControl,
