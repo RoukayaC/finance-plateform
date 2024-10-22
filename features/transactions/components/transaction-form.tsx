@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { DatePicker } from "@/components/ui/date-picker";
 import { insertTransactionSchema } from "@/db/schema";
 import { convertAmountToMiliunits } from "@/lib/utils";
-import { AmountInput } from "../ui/amount-input";
+import { AmountInput } from "@/components/ui/amount-input";
 import {
   Form,
   FormControl,
@@ -90,11 +90,11 @@ export const TransactionForm = ({
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <DatePicker
+                {/* <DatePicker
                   value={field.value}
                   onChange={field.onChange}
                   disabled={disabled}
-                />
+                /> */}
               </FormControl>
             </FormItem>
           )}
