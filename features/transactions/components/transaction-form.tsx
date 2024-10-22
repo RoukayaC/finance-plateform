@@ -7,7 +7,7 @@ import { Select } from "@/components/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { DatePicker } from "@/components/ui/date-picker";
+import { DatePicker } from "@/components/date-picker";
 import { insertTransactionSchema } from "@/db/schema";
 import { convertAmountToMiliunits } from "@/lib/utils";
 import { AmountInput } from "@/components/amount-input";
@@ -65,13 +65,13 @@ export const TransactionForm = ({
   });
 
   const handleSubmit = (values: FormValues) => {
-    const amount = parseFloat(values.amount)
+    const amount = parseFloat(values.amount);
     const amountInMiliunits = convertAmountToMiliunits(amount);
 
     onSubmit({
       ...values,
       amount: amountInMiliunits,
-    })
+    });
   };
 
   const handleDelete = () => {
@@ -90,11 +90,11 @@ export const TransactionForm = ({
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                {/* <DatePicker
+                <DatePicker
                   value={field.value}
                   onChange={field.onChange}
                   disabled={disabled}
-                /> */}
+                />
               </FormControl>
             </FormItem>
           )}
@@ -144,7 +144,7 @@ export const TransactionForm = ({
             <FormItem>
               <FormLabel>Payee</FormLabel>
               <FormControl>
-                <Input 
+                <Input
                   disabled={disabled}
                   placeholder="Add a payee"
                   {...field}
@@ -160,7 +160,7 @@ export const TransactionForm = ({
             <FormItem>
               <FormLabel>Amount</FormLabel>
               <FormControl>
-                <AmountInput 
+                <AmountInput
                   {...field}
                   disabled={disabled}
                   placeholder="0.00"
